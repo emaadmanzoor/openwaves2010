@@ -1,0 +1,9 @@
+<?php
+$host="your.hostname.here";
+$user_name="dbusername";
+$pass_word="dbpassword";
+$webroot="http://www.bits-waves.org";
+$db="db";
+mysql_connect($host,$user_name,$pass_word);
+mysql_select_db($db);
+?>

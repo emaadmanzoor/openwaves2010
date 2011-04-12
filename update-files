@@ -1,0 +1,22 @@
+#!/bin/sh
+
+echo "Compressing scripts..."
+yui-compressor scripts.js -o scripts.min.js
+yui-compressor includes.js -o includes.min.js
+yui-compressor jquery.js -o jquery.min.js
+
+echo "Compressing styles..."
+yui-compressor css/styles.css -o css/styles.min.css
+yui-compressor css/sponsors.css -o css/sponsors.min.css
+
+echo "Gzipping..."
+gzip --best -vf *.min.js
+gzip --best -vf css/*.min.css
+
+echo "GUNzipping..."
+gunzip -cv scripts.min.js.gz > scripts.min.js
+gunzip -cv includes.min.js.gz > includes.min.js
+gunzip -cv jquery.min.js.gz > jquery.min.js
+gunzip -cv css/sponsors.min.css.gz > css/sponsors.min.css
+gunzip -cv css/styles.min.css.gz > css/styles.min.css
+
