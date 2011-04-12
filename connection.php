@@ -1,0 +1,9 @@
+<?php
+$host="localhost";
+$user_name="root";
+$pass_word="";
+$webroot="localhost";
+$db="waves";
+mysql_connect($host,$user_name,$pass_word);
+mysql_select_db($db);
+?>
